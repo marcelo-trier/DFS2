@@ -22,6 +22,7 @@ public class DFS extends Grafo {
 	
 	public void sortFu() {
 		Arrays.sort( listaInfo ); // ordenar listaInfo em ordem crescente...
+
 		int u = vertices.length - 1;
 		for( BuscaInfo bi : listaInfo ) {
 			vertices[ u-- ] = bi.vertex; // pegar os vertices em ordem decrescente...
