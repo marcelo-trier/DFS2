@@ -73,6 +73,8 @@ public class DFS extends Grafo {
 		u.fu = ++time;
 	}
 	
+	String intFormat = "%2d, ";
+	String strFormat = "%2s, ";
 	public String toString() {
 		String msg;
 		String du = "du[] = { ";
@@ -80,10 +82,14 @@ public class DFS extends Grafo {
 		String pi = "pi[] = { ";
 		msg = "#DFS :\n";
 		for( BuscaInfo bi : listaInfo ) {
-			du += bi.du + ", ";
-			fu += bi.fu + ", ";
+			//du += bi.du + ", ";
+			//fu += bi.fu + ", ";
+			du += String.format( intFormat, bi.du );
+			fu += String.format( intFormat, bi.fu );
 			//int vertex = ( bi.pi == null ) ? -1 : bi.pi.vertex;
-			pi += bi.pi + ", ";
+			pi += ( bi.pi == null ) ? "--, " : String.format( strFormat, bi.pi.toString() );
+			//pi += ", ";
+			//pi += bi.pi + ", ";
 		}
 		du = du.substring( 0, du.length() - 2 ) + " };";
 		fu = fu.substring( 0, fu.length() - 2 ) + " };";
